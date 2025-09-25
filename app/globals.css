@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette to match Dip 'n' Dives outdoor adventure theme */
+  --sun-orange: #f8a22c;
+  --rock-red: #a63b24;
+  --deep-teal: #217190;
+  --aqua-blue: #43b8d1;
+  --sand-beige: #f6e6c5;
+  --dark-brown: #2c1b12;
+  --white: #ffffff;
+
+  --background: #f6e6c5; /* Sand beige background */
+  --foreground: #2c1b12; /* Dark brown text */
+  --card: #ffffff; /* White cards for contrast */
+  --card-foreground: #2c1b12; /* Dark brown card text */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #2c1b12; /* Dark brown popover text */
+  --primary: #217190; /* Deep teal primary */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #43b8d1; /* Aqua blue secondary */
+  --secondary-foreground: #2c1b12; /* Dark brown text on secondary */
+  --muted: #f6e6c5; /* Sand beige muted */
+  --muted-foreground: #a63b24; /* Rock red muted text */
+  --accent: #f8a22c; /* Sun orange accent */
+  --accent-foreground: #2c1b12; /* Dark brown text on accent */
+  --destructive: #a63b24; /* Rock red for destructive */
+  --destructive-foreground: #ffffff;
+  --border: #43b8d1; /* Aqua blue borders */
+  --input: #ffffff; /* White input background */
+  --ring: #217190; /* Deep teal focus ring */
+  --radius: 0.75rem;
+  --chart-1: #f8a22c;
+  --chart-2: #217190;
+  --chart-3: #43b8d1;
+  --chart-4: #a63b24;
+  --chart-5: #2c1b12;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2c1b12;
+  --sidebar-primary: #f6e6c5;
+  --sidebar-primary-foreground: #2c1b12;
+  --sidebar-accent: #217190;
+  --sidebar-accent-foreground: #f6e6c5;
+  --sidebar-border: #43b8d1;
+  --sidebar-ring: #217190;
+}
+
+.dark {
+  --background: #2c1b12;
+  --foreground: #f6e6c5;
+  --card: #2c1b12;
+  --card-foreground: #f6e6c5;
+  --popover: #2c1b12;
+  --popover-foreground: #f6e6c5;
+  --primary: #43b8d1;
+  --primary-foreground: #2c1b12;
+  --secondary: #217190;
+  --secondary-foreground: #f6e6c5;
+  --muted: #a63b24;
+  --muted-foreground: #f6e6c5;
+  --accent: #f8a22c;
+  --accent-foreground: #2c1b12;
+  --destructive: #a63b24;
+  --destructive-foreground: #f6e6c5;
+  --border: #217190;
+  --input: #a63b24;
+  --ring: #43b8d1;
+  --chart-1: #f8a22c;
+  --chart-2: #43b8d1;
+  --chart-3: #217190;
+  --chart-4: #a63b24;
+  --chart-5: #f6e6c5;
+  --sidebar: #a63b24;
+  --sidebar-foreground: #f6e6c5;
+  --sidebar-primary: #2c1b12;
+  --sidebar-primary-foreground: #f6e6c5;
+  --sidebar-accent: #217190;
+  --sidebar-accent-foreground: #f6e6c5;
+  --sidebar-border: #217190;
+  --sidebar-ring: #43b8d1;
+}
+
+/* Added custom animations and effects for lively interactions */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(248, 162, 44, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(248, 162, 44, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #43b8d1 0%, #217190 50%, #f8a22c 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #217190, #f8a22c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
